@@ -1,28 +1,67 @@
 .main {
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
-	grid-template-areas: '. aside section section section .';
+	grid-template-areas: '. section section section section .';
 	column-gap: 1.5rem;
 	margin-top: 1.5rem;
 	padding: 0 1.5rem;
-}
 
-.aside {
-	grid-area: aside;
-	border-right: 1px solid #333333;
-}
-
-.section {
-	grid-area: section;
-
-	display: flex;
-	flex-direction: column;
-	row-gap: 1.5rem;
+	height: calc(100vh - 12rem);
 	overflow-x: hidden;
 	overflow-y: auto;
 }
 
-.book_link {
+.section {
+	grid-area: section;
+}
+
+.article {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	column-gap: 1.5rem;
+}
+
+.duration_title_wrapper {
+	border-right: 1px solid #333333;
+	padding-top: 1.5rem;
+	padding-right: 1.5rem;
+}
+
+.duration_title {
+	position: sticky;
+	top: 1.5rem;
+	text-align: right;
+}
+
+.link_list {
+	grid-column: span 3;
+	display: flex;
+	flex-direction: column;
+	row-gap: 1.5rem;
+	padding: 1.5rem 0;
+}
+
+.link_list a {
+	position: relative;
 	font-size: 1.5rem;
 	font-weight: 500;
+	z-index: 0;
+}
+
+.link_list a::after {
+	content: '';
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	height: 0.5rem;
+	background: #c1c1c1;
+	scale: 0 1;
+	transform-origin: center left;
+	transition: scale 0.3s ease-in;
+	z-index: -1;
+}
+
+.link_list a:hover::after {
+	scale: 1;
 }

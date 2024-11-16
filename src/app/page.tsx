@@ -1,65 +1,52 @@
-'use client';
-
-import { SideTab } from '@/components/side-tab';
+import { ApiResult } from '@/types/api';
+import { BookCategory } from '@/types/book';
+import { getDuration, groupByDuration } from '@/utils/book';
 import Link from 'next/link';
-import { useState } from 'react';
 import styles from './page.module.css';
 
-const tabItems = [
-	{ id: 'WEEKLY', label: 'Weekly' },
-	{ id: 'MONTHLY', label: 'Monthly' },
-];
+const BASE_URL = 'https://books-api.nomadcoders.workers.dev/lists';
 
-export default function Home() {
-	const [activeTab, setActiveTab] = useState('WEEKLY');
+const getBooksLists = async (): Promise<ApiResult<BookCategory[]>> => {
+	const response = await fetch(BASE_URL);
+	const data = await response.json();
+	return data;
+};
 
-	const onTabItemClick = (id: string) => {
-		setActiveTab(id);
-	};
+export default async function Home() {
+	const booksLists = await getBooksLists();
+	const grouppedList = groupByDuration(booksLists.results);
 
 	return (
 		<main className={styles.main}>
-			<aside className={styles.aside}>
-				<SideTab
-					items={tabItems}
-					activeItemId={activeTab}
-					itemClickHandler={onTabItemClick}
-				/>
-			</aside>
 			<section className={styles.section}>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
-				<Link href={`/list/id`} className={styles.book_link}>
-					Combined Print & E-Book Fiction
-				</Link>
+				<article className={styles.article}>
+					<div className={styles.duration_title_wrapper}>
+						<h4 className={styles.duration_title}>{getDuration('WEEKLY')}</h4>
+					</div>
+					<ul className={styles.link_list}>
+						{grouppedList.WEEKLY.map((category) => (
+							<li key={category.list_name_encoded}>
+								<Link href={`/list/${category.list_name_encoded}`}>
+									{category.display_name}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</article>
+				<article className={styles.article}>
+					<div className={styles.duration_title_wrapper}>
+						<h4 className={styles.duration_title}>{getDuration('MONTHLY')}</h4>
+					</div>
+					<ul className={styles.link_list}>
+						{grouppedList.MONTHLY.map((category) => (
+							<li key={category.list_name_encoded}>
+								<Link href={`/list/${category.list_name_encoded}`}>
+									{category.display_name}
+								</Link>
+							</li>
+						))}
+					</ul>
+				</article>
 			</section>
 		</main>
 	);
