@@ -17,12 +17,16 @@ export default function Header() {
 				The New York Times Best Sellers
 			</h1>
 			<nav className={styles.nav}>
-				<Link href='/' className={getLinkClassName('/')}>
-					Home
-				</Link>
-				<Link href='/about' className={getLinkClassName('/about')}>
-					About
-				</Link>
+				<span className={styles.link_wrapper}>
+					<Link href='/' className={getLinkClassName('/')}>
+						Home
+					</Link>
+				</span>
+				<span className={styles.link_wrapper}>
+					<Link href='/about' className={getLinkClassName('/about')}>
+						About
+					</Link>
+				</span>
 			</nav>
 		</header>
 	);
