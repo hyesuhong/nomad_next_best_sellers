@@ -1,3 +1,5 @@
+import Header from '@/components/header';
+import { glegoo, roboto } from '@/styles/fonts';
 import type { Metadata } from 'next';
 import './globals.css';
 
@@ -12,8 +14,11 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang='en'>
-			<body>{children}</body>
+		<html lang='en' className={`${roboto.variable} ${glegoo.variable}`}>
+			<body>
+				<Header />
+				<main>{children}</main>
+			</body>
 		</html>
 	);
 }
