@@ -17,7 +17,7 @@ export default function RootLayout({
 		<html lang='en' className={`${roboto.variable} ${glegoo.variable}`}>
 			<body>
 				<Header />
-				<main>{children}</main>
+				{children}
 			</body>
 		</html>
 	);

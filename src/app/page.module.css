@@ -1,0 +1,28 @@
+.main {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-areas: '. aside section section section .';
+	column-gap: 1.5rem;
+	margin-top: 1.5rem;
+	padding: 0 1.5rem;
+}
+
+.aside {
+	grid-area: aside;
+	border-right: 1px solid #333333;
+}
+
+.section {
+	grid-area: section;
+
+	display: flex;
+	flex-direction: column;
+	row-gap: 1.5rem;
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
+.book_link {
+	font-size: 1.5rem;
+	font-weight: 500;
+}
