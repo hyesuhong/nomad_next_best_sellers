@@ -12,6 +12,10 @@ export const getCategories = async (): Promise<ApiResult<BookCategory[]>> => {
 	}
 
 	const data = await response.json();
+
+	if (data.status === 'ERROR') {
+		throw new Error('Fetching categories was failed.');
+	}
 	return data;
 };
 
@@ -26,5 +30,9 @@ export const getBooksByCategory = async (
 	}
 
 	const data = await response.json();
+
+	if (data.status === 'ERROR') {
+		throw new Error('Fetching books list was failed.');
+	}
 	return data;
 };
