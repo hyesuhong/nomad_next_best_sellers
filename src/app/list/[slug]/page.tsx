@@ -1,6 +1,6 @@
 import { getBooksByCategory } from '@/api/book';
 import BooksLayout from '@/components/books-layout';
-import styles from '@/styles/book_list_page.module.css';
+import styles from '@/styles/pages/book_list_page.module.css';
 
 interface BookCategoryProps {
 	params: Promise<{ slug: string }>;

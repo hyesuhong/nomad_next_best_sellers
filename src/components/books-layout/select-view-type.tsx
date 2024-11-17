@@ -1,4 +1,4 @@
-import styles from '@/styles/books-layout.module.css';
+import styles from '@/styles/components/books-layout.module.css';
 import { ChangeEvent, useId } from 'react';
 
 interface SelectViewTypeProps {
