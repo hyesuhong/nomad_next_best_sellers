@@ -24,7 +24,13 @@ export default function GridView({ data }: GridViewProps) {
 						<h4 className={styles.book_title}>{book.title}</h4>
 						<p className={styles.book_author}>{book.author}</p>
 						<p className={styles.book_description}>{book.description}</p>
-						<button className={styles.buy_button}>Buy</button>
+						<a
+							href={book.amazon_product_url}
+							target='_blank'
+							className={styles.buy_button}
+						>
+							Buy
+						</a>
 					</dd>
 				</dl>
 			))}

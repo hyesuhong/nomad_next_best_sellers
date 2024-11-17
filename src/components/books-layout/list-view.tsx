@@ -31,7 +31,13 @@ export default function ListView({ data }: ListViewProps) {
 						<p className={styles.book_description}>{book.description}</p>
 					</div>
 					<div className={`${styles.list_cell} ${styles.list_cell_center}`}>
-						<button className={styles.buy_button}>Buy</button>
+						<a
+							href={book.amazon_product_url}
+							target='_blank'
+							className={styles.buy_button}
+						>
+							Buy
+						</a>
 					</div>
 				</div>
 			))}
