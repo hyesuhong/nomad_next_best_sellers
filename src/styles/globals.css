@@ -6,17 +6,8 @@
 
 html,
 body {
-	font-family: var(--font-roboto);
 	background: #e4e4e4;
 	color: #333333;
-}
-
-.roboto {
-	font-family: var(--font-roboto);
-}
-
-.glegoo {
-	font-family: var(--font-glegoo);
 }
 
 img {
