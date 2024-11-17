@@ -1,5 +1,5 @@
 import { getCategories } from '@/api/book';
-import styles from '@/styles/pages/main_page.module.css';
+import styles from '@/styles/pages/main-page.module.css';
 import { getDuration, groupByDuration } from '@/utils/book';
 import Link from 'next/link';
 
