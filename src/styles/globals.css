@@ -62,10 +62,16 @@ button {
 }
 
 @media (max-width: 768px) {
-	/*  */
+	:root {
+		font-size: 15px;
+	}
 }
 
 @media (max-width: 640px) {
+	:root {
+		font-size: 14px;
+	}
+
 	main {
 		grid-template-columns: repeat(2, 1fr);
 		grid-template-areas: 'section section';
