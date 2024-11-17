@@ -1,5 +1,5 @@
 import { ChangeEvent, useId } from 'react';
-import styles from './select-view-type.module.css';
+import styles from '../books-layout.module.css';
 
 interface SelectViewTypeProps {
 	currentType: 'grid' | 'list';
@@ -14,8 +14,8 @@ export default function SelectViewType({
 	const gridInputId = useId();
 
 	return (
-		<div className={styles.container}>
-			<span className={styles.input_wrapper}>
+		<div className={styles.select_container}>
+			<span className={styles.radio_wrapper}>
 				<input
 					type='radio'
 					name='view-type'
@@ -26,22 +26,21 @@ export default function SelectViewType({
 				/>
 				<label htmlFor={listInputId}>
 					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						fill='none'
+						strokeWidth='1.5'
 						viewBox='0 0 24 24'
-						strokeWidth={1.5}
-						stroke='currentColor'
-						className='size-6'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'
+						color='currentColor'
 					>
 						<path
-							strokeLinecap='round'
-							strokeLinejoin='round'
-							d='M8.25 6.75h12M8.25 12h12m-12 5.25h12M3.75 6.75h.007v.008H3.75V6.75Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0ZM3.75 12h.007v.008H3.75V12Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm-.375 5.25h.007v.008H3.75v-.008Zm.375 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Z'
-						/>
+							d='M3 12H7.5H12H16.5H21M3 12V16.5M3 12V7.5M21 12V16.5M21 12V7.5M3 16.5V20.4C3 20.7314 3.26863 21 3.6 21H7.5H12H16.5H20.4C20.7314 21 21 20.7314 21 20.4V16.5M3 16.5H7.5H12H16.5H21M21 7.5V3.6C21 3.26863 20.7314 3 20.4 3H16.5H12H7.5H3.6C3.26863 3 3 3.26863 3 3.6V7.5M21 7.5H16.5H12H7.5H3'
+							stroke='currentColor'
+							strokeWidth='1.5'
+						></path>
 					</svg>
 				</label>
 			</span>
-			<span className={styles.input_wrapper}>
+			<span className={styles.radio_wrapper}>
 				<input
 					type='radio'
 					name='view-type'
@@ -52,18 +51,32 @@ export default function SelectViewType({
 				/>
 				<label htmlFor={gridInputId}>
 					<svg
-						xmlns='http://www.w3.org/2000/svg'
-						fill='none'
+						strokeWidth='1.5'
 						viewBox='0 0 24 24'
-						strokeWidth={1.5}
-						stroke='currentColor'
-						className='size-6'
+						fill='none'
+						xmlns='http://www.w3.org/2000/svg'
+						color='currentColor'
 					>
 						<path
-							strokeLinecap='round'
-							strokeLinejoin='round'
-							d='M3.375 19.5h17.25m-17.25 0a1.125 1.125 0 0 1-1.125-1.125M3.375 19.5h7.5c.621 0 1.125-.504 1.125-1.125m-9.75 0V5.625m0 12.75v-1.5c0-.621.504-1.125 1.125-1.125m18.375 2.625V5.625m0 12.75c0 .621-.504 1.125-1.125 1.125m1.125-1.125v-1.5c0-.621-.504-1.125-1.125-1.125m0 3.75h-7.5A1.125 1.125 0 0 1 12 18.375m9.75-12.75c0-.621-.504-1.125-1.125-1.125H3.375c-.621 0-1.125.504-1.125 1.125m19.5 0v1.5c0 .621-.504 1.125-1.125 1.125M2.25 5.625v1.5c0 .621.504 1.125 1.125 1.125m0 0h17.25m-17.25 0h7.5c.621 0 1.125.504 1.125 1.125M3.375 8.25c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125m17.25-3.75h-7.5c-.621 0-1.125.504-1.125 1.125m8.625-1.125c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125v1.5c0 .621.504 1.125 1.125 1.125M12 10.875v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 10.875c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125M13.125 12h7.5m-7.5 0c-.621 0-1.125.504-1.125 1.125M20.625 12c.621 0 1.125.504 1.125 1.125v1.5c0 .621-.504 1.125-1.125 1.125m-17.25 0h7.5M12 14.625v-1.5m0 1.5c0 .621-.504 1.125-1.125 1.125M12 14.625c0 .621.504 1.125 1.125 1.125m-2.25 0c.621 0 1.125.504 1.125 1.125m0 1.5v-1.5m0 0c0-.621.504-1.125 1.125-1.125m0 0h7.5'
-						/>
+							d='M14 20.4V14.6C14 14.2686 14.2686 14 14.6 14H20.4C20.7314 14 21 14.2686 21 14.6V20.4C21 20.7314 20.7314 21 20.4 21H14.6C14.2686 21 14 20.7314 14 20.4Z'
+							stroke='currentColor'
+							strokeWidth='1.5'
+						></path>
+						<path
+							d='M3 20.4V14.6C3 14.2686 3.26863 14 3.6 14H9.4C9.73137 14 10 14.2686 10 14.6V20.4C10 20.7314 9.73137 21 9.4 21H3.6C3.26863 21 3 20.7314 3 20.4Z'
+							stroke='currentColor'
+							strokeWidth='1.5'
+						></path>
+						<path
+							d='M14 9.4V3.6C14 3.26863 14.2686 3 14.6 3H20.4C20.7314 3 21 3.26863 21 3.6V9.4C21 9.73137 20.7314 10 20.4 10H14.6C14.2686 10 14 9.73137 14 9.4Z'
+							stroke='currentColor'
+							strokeWidth='1.5'
+						></path>
+						<path
+							d='M3 9.4V3.6C3 3.26863 3.26863 3 3.6 3H9.4C9.73137 3 10 3.26863 10 3.6V9.4C10 9.73137 9.73137 10 9.4 10H3.6C3.26863 10 3 9.73137 3 9.4Z'
+							stroke='currentColor'
+							strokeWidth='1.5'
+						></path>
 					</svg>
 				</label>
 			</span>
