@@ -29,7 +29,7 @@ export interface CategoryDetail {
 	books: Book[];
 }
 
-interface Book {
+export interface Book {
 	rank: number;
 	rank_last_week: number;
 	weeks_on_list: number;
