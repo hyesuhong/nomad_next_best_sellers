@@ -1,20 +1,11 @@
+import { getCategories } from '@/api/book';
 import styles from '@/styles/main_page.module.css';
-import { ApiResult } from '@/types/api';
-import { BookCategory } from '@/types/book';
 import { getDuration, groupByDuration } from '@/utils/book';
 import Link from 'next/link';
 
-const BASE_URL = 'https://books-api.nomadcoders.workers.dev/lists';
-
-const getBooksLists = async (): Promise<ApiResult<BookCategory[]>> => {
-	const response = await fetch(BASE_URL);
-	const data = await response.json();
-	return data;
-};
-
 export default async function Home() {
-	const booksLists = await getBooksLists();
-	const grouppedList = groupByDuration(booksLists.results);
+	const categories = await getCategories();
+	const grouppedList = groupByDuration(categories.results);
 
 	return (
 		<main className={styles.main}>

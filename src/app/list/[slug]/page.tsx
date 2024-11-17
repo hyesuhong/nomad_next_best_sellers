@@ -1,19 +1,6 @@
+import { getBooksByCategory } from '@/api/book';
 import BooksLayout from '@/components/books-layout';
 import styles from '@/styles/book_list_page.module.css';
-import { ApiResult } from '@/types/api';
-import { CategoryDetail } from '@/types/book';
-
-const BASE_URL = 'https://books-api.nomadcoders.workers.dev/list';
-
-const getBooksByCategory = async (
-	category: string
-): Promise<ApiResult<CategoryDetail>> => {
-	const url = `${BASE_URL}?name=${category}`;
-
-	const response = await fetch(url);
-	const data = await response.json();
-	return data;
-};
 
 interface BookCategoryProps {
 	params: Promise<{ slug: string }>;
