@@ -1,7 +1,7 @@
 import BooksLayout from '@/components/books-layout';
+import styles from '@/styles/book_list_page.module.css';
 import { ApiResult } from '@/types/api';
 import { CategoryDetail } from '@/types/book';
-import styles from './page.module.css';
 
 const BASE_URL = 'https://books-api.nomadcoders.workers.dev/list';
 

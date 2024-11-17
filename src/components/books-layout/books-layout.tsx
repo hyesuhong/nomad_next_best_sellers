@@ -2,9 +2,9 @@
 
 import { Book } from '@/types/book';
 import { ChangeEvent, useState } from 'react';
-import GridView from './grid-view/grid-view';
-import ListView from './list-view/list-view';
-import SelectViewType from './select-view-type/select-view-type';
+import GridView from './grid-view';
+import ListView from './list-view';
+import SelectViewType from './select-view-type';
 
 interface BooksLayoutProps {
 	data: Book[];

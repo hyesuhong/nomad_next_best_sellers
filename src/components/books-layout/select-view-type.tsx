@@ -1,5 +1,5 @@
+import styles from '@/styles/books-layout.module.css';
 import { ChangeEvent, useId } from 'react';
-import styles from '../books-layout.module.css';
 
 interface SelectViewTypeProps {
 	currentType: 'grid' | 'list';

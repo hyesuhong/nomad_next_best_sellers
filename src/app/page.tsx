@@ -1,8 +1,8 @@
+import styles from '@/styles/main_page.module.css';
 import { ApiResult } from '@/types/api';
 import { BookCategory } from '@/types/book';
 import { getDuration, groupByDuration } from '@/utils/book';
 import Link from 'next/link';
-import styles from './page.module.css';
 
 const BASE_URL = 'https://books-api.nomadcoders.workers.dev/lists';
 

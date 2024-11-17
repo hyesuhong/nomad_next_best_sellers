@@ -1,6 +1,6 @@
+import styles from '@/styles/books-layout.module.css';
 import { Book } from '@/types/book';
 import Image from 'next/image';
-import styles from '../books-layout.module.css';
 
 interface ListViewProps {
 	data: Book[];
