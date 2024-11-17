@@ -37,7 +37,7 @@
 	flex-direction: column;
 	row-gap: 0.5rem;
 	padding: 1rem;
-	border-left: 1px solid #333333;
+	border-left: 1px solid var(--color-text);
 }
 
 .list_container {
@@ -53,7 +53,7 @@
 }
 
 .list_row:not(:last-child) {
-	border-bottom: 1px solid #333333;
+	border-bottom: 1px solid var(--color-text);
 }
 
 .list_cell {
@@ -99,7 +99,7 @@
 	height: fit-content;
 	border: none;
 	outline: none;
-	background: #c1c1c1;
+	background: var(--color-grey);
 
 	padding: 0.5rem 1.5rem;
 	z-index: 0;
@@ -112,7 +112,7 @@
 	left: 0;
 	width: 100%;
 	height: 100%;
-	background: #fffc62;
+	background: var(--color-highlight);
 	scale: 0 1;
 	transform-origin: center left;
 	transition: scale 0.3s ease-in;

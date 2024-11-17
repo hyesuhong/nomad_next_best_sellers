@@ -14,8 +14,8 @@
 	column-gap: 1.5rem;
 	margin-top: 2.5rem;
 	padding: 0.5rem 0;
-	border-top: 1px solid #333;
-	border-bottom: 1px solid #333;
+	border-top: 1px solid var(--color-text);
+	border-bottom: 1px solid var(--color-text);
 }
 
 .link_wrapper {
@@ -47,7 +47,7 @@
 	left: -30%;
 	width: 160%;
 	height: 0.5rem;
-	background: #fffc62;
+	background: var(--color-highlight);
 	scale: 0 1;
 	transform-origin: center left;
 	transition: scale 0.3s 0.2s ease-in;
