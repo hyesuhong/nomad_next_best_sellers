@@ -122,3 +122,27 @@
 .buy_button:hover::before {
 	scale: 1;
 }
+
+@media (max-width: 1200px) {
+	.grid_container {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+
+@media (max-width: 640px) {
+	.select_container {
+		margin: 1rem 0 0.5rem;
+	}
+
+	.list_container {
+		grid-template-columns: 1rem 5rem minmax(0, 1fr) min-content;
+	}
+
+	.grid_container {
+		grid-template-columns: repeat(1, 1fr);
+	}
+
+	.book_description {
+		display: none;
+	}
+}

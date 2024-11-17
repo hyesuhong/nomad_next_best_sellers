@@ -17,6 +17,25 @@ body {
 	color: var(--color-text);
 }
 
+body {
+	display: grid;
+	grid-template-rows: max-content minmax(0, 1fr);
+	row-gap: 1.5rem;
+
+	height: 100vh;
+}
+
+main {
+	display: grid;
+	grid-template-columns: repeat(6, 1fr);
+	grid-template-areas: '. section section section section .';
+	column-gap: 1.5rem;
+	padding: 0 1.5rem 1rem;
+
+	overflow-x: hidden;
+	overflow-y: auto;
+}
+
 img {
 	vertical-align: middle;
 }
@@ -33,4 +52,22 @@ ol li {
 
 button {
 	cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+	main {
+		grid-template-columns: repeat(4, 1fr);
+		grid-template-areas: 'section section section section';
+	}
+}
+
+@media (max-width: 768px) {
+	/*  */
+}
+
+@media (max-width: 640px) {
+	main {
+		grid-template-columns: repeat(2, 1fr);
+		grid-template-areas: 'section section';
+	}
 }

@@ -1,5 +1,5 @@
 .header {
-	padding: 1.25rem 1.5rem 0;
+	padding: 1rem 1.5rem 0;
 }
 
 .header_title {
@@ -12,7 +12,7 @@
 	display: grid;
 	grid-template-columns: repeat(6, 1fr);
 	column-gap: 1.5rem;
-	margin-top: 2.5rem;
+	margin-top: 1.5rem;
 	padding: 0.5rem 0;
 	border-top: 1px solid var(--color-text);
 	border-bottom: 1px solid var(--color-text);
@@ -60,4 +60,24 @@
 
 .active::after {
 	scale: 1;
+}
+
+@media (max-width: 1200px) {
+	.nav {
+		grid-template-columns: repeat(4, 1fr);
+	}
+
+	.link_wrapper:first-child {
+		grid-column: 2/3;
+	}
+}
+
+@media (max-width: 640px) {
+	.nav {
+		grid-template-columns: repeat(2, 1fr);
+	}
+
+	.link_wrapper:first-child {
+		grid-column: span 1;
+	}
 }

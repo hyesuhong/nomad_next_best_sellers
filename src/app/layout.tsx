@@ -17,7 +17,7 @@ export default function RootLayout({
 		<html lang='en' className={glegoo.className}>
 			<body>
 				<Header />
-				{children}
+				<main>{children}</main>
 			</body>
 		</html>
 	);
