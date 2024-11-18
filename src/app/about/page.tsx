@@ -1,4 +1,9 @@
 import styles from '@/styles/pages/about-page.module.css';
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+	title: 'About',
+};
 
 export default function About() {
 	return (

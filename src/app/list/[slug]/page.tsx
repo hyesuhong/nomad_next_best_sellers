@@ -1,9 +1,21 @@
 import { getBooksByCategory } from '@/api/book';
 import BooksLayout from '@/components/books-layout';
 import styles from '@/styles/pages/book-list-page.module.css';
+import { Metadata } from 'next';
 
 interface BookCategoryProps {
 	params: Promise<{ slug: string }>;
+}
+
+export async function generateMetadata({
+	params,
+}: BookCategoryProps): Promise<Metadata> {
+	const { slug } = await params;
+	const data = await getBooksByCategory(slug);
+
+	return {
+		title: data.results.display_name,
+	};
 }
 
 export default async function BookCategory({ params }: BookCategoryProps) {
